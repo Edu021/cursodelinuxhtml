@@ -1,0 +1,25 @@
+1. Introdução ao Linux:
+	O que é o Linux e sua história.
+	Vantagens e benefícios do Linux.
+	Visão geral das diferentes distribuições Linux.
+
+2. Linha de comando:
+
+	Introdução à linha de comando do Linux (bash).
+	Comandos básicos do Linux (navegação, manipulação de arquivos, permissões etc.).
+	Shell scripting: automação de tarefas com scripts.
+
+3. Gerenciamento de pacotes:
+
+	Gerenciadores de pacotes comuns (apt, yum, dnf).
+	Instalação, atualização e remoção de software usando gerenciadores de pacotes.
+
+4. Administração do sistema:
+
+	Gerenciamento de usuários e grupos.
+	Configuração de permissões de arquivos e diretórios.
+	Gerenciamento de serviços e da inicialização do sistema.
+
+5. Administração de servidores:
+
+	Configuração de servidores web (Apache).

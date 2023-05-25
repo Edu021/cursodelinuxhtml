@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../css/index.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Curso de Linux: Gerenciamento de pacotes</title>
+  <style>
+
+  </style>
+</head>
+<body class="bg-secondary">
+
+  <nav class="navbar bg-secondary">
+    <div class="container-fluid">
+      <a class="navbar-brand text-light mx-auto p-2" href="../index.html">
+        <img src="../src/penguin-4871045_1280.webp" alt="Logo" width="50" height="44" class="d-inline-block text-center">
+        Curso de Linux
+      </a>
+    </div>
+  </nav>
+
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h6 class="text-light h4">Módulos</h6>
+      <ol class="list-group list-group-numbered">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold"><a href="../curso/introducao.html" target="_blank" class="text-decoration-none text-dark">1. Introdução ao Linux:</a></div>
+            Vantagens, benefícios, história, visão geral
+          </div>
+          <span class="badge bg-primary rounded-pill">3 tópicos</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold"><a href="../curso/linhadecomando.html" target="_blank" class="text-decoration-none text-dark">2. Linha de comando:</a></div>
+            Terminal, comandos básicos, scripts
+          </div>
+          <span class="badge bg-primary rounded-pill">3 tópicos</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold"><a href="../curso/gerenciamentopacotes.html" target="_blank" class="text-decoration-none text-dark">3. Gerenciamento de pacotes:</a></div>
+            Gerenciadores de pacotes, Instalação, atualização.
+          </div>
+          <span class="badge bg-primary rounded-pill">2 tópicos</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold"><a href="../curso/administracaosistema.html" target="_blank" class="text-decoration-none text-dark">4. Administração do sistema:</a></div>
+              Usuários, grupos, permissões e serviços.
+            </div>
+            <span class="badge bg-primary rounded-pill">3 tópicos</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold"><a href="../curso/administracaoservidor.html" target="_blank" class="text-decoration-none text-dark">5. Administração de servidores:</a></div>
+              Apache
+            </div>
+            <span class="badge bg-primary rounded-pill">1 tópicos</span>
+          </li>
+      </ol>
+      
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="mx-auto p-2 navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        Ver Curso
+        <span class="bi bi-chevron-down"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="bg-dark text-light">
+    <div class="mx-5">
+        <h2>Gerenciamento de pacotes</h2>
+        <p>
+          Os gerenciadores de pacotes são ferramentas essenciais no Linux para instalar, atualizar e remover software de forma conveniente e segura. Existem diferentes gerenciadores de pacotes utilizados nas principais distribuições Linux, sendo os mais comuns o <b class="text-danger">apt</b>, utilizado pelo Debian e suas variantes, o <b class="text-danger">yum</b>, utilizado pelo CentOS e RHEL, e o <b class="text-danger">dnf</b>, utilizado pelo Fedora.
+        </p>
+        <br>
+    </div>
+
+
+    <div class="mx-5">
+        <section class="p-3">
+            <h4>
+              Gerenciadores de pacotes comuns
+            </h4>
+            <p>
+              <div>
+                <h6>
+                  <b class="text-danger">apt (Advanced Package Tool):</b> O apt é utilizado pelo Debian, Ubuntu e suas variantes. Ele fornece uma interface de linha de comando fácil de usar para gerenciar pacotes. Alguns comandos úteis são:
+                </h6>
+                <section class="mx-3">
+                  
+                  <div>
+                    <p>
+                      <b class="text-primary">sudo apt update:</b> Atualiza a lista de pacotes disponíveis.
+                    </p>
+                    <img class="w-50 p-3" src="../src/sudoaptupdate.PNG">
+                  </div>
+                  
+                  <div>
+                    <p>
+                      <b class="text-primary">sudo apt upgrade:</b> Atualiza todos os pacotes instalados para suas versões mais recentes.
+                    </p>
+                    <img class="w-50 p-3" src="../src/sudoaptupgrade.PNG">
+                  </div>
+                  <div>
+                    <p>
+                      <b class="text-primary">sudo apt install nome_do_pacote:</b> Instala um pacote específico.
+                    </p>
+                    <img class="w-50 p-3" src="../src/sudoaptinstall.PNG">
+                  </div>
+                  <div>
+                    <p>
+                      <b class="text-primary">sudo apt remove nome_do_pacote:</b> Remove um pacote específico.
+                    </p>
+                    <img class="w-50 p-3" src="../src/sudoaptremove.PNG">
+                  </div>
+
+                </section>
+
+              </div>
+              <!-- <div>
+                <h6>
+                  <b class="text-danger">yum (Yellowdog Updater, Modified):</b> O yum é utilizado pelo CentOS, RHEL e outras distribuições baseadas no Red Hat. Ele também possui uma interface de linha de comando simples. Alguns comandos comuns incluem:
+                </h6>
+                <section class="mx-3">
+                  <div>
+                    <p>
+                      <b class="text-primary">sudo yum update:</b> Atualiza todos os pacotes instalados.
+                    </p>
+                    <img class="w-50 p-3" src="../src/sudoyum.PNG">
+                  </div>
+
+                  <div>
+                    <p>
+                      <b class="text-primary">sudo yum install nome_do_pacote:</b> Instala um pacote específico.
+                    </p>
+                    <img class="w-50 p-3" src="../src/sudoyum.PNG">
+                  </div>
+
+                  <div>
+                    <p>
+                      <b class="text-primary">sudo yum upgrade:</b> Atualiza os pacotes instalados para suas versões mais recentes.
+                    </p>
+                    <img class="w-50 p-3" src="../src/sudoyum.PNG">
+                  </div>
+
+                  <div>
+                    <p>
+                      <b class="text-primary">sudo yum remove nome_do_pacote:</b> Remove um pacote específico.
+                    </p>
+                    <img class="w-50 p-3" src="../src/sudoyum.PNG">
+                  </div> 
+                  
+                </section>
+
+              </div>
+              <div>
+                <h6>
+                  <b class="text-danger">dnf (Dandified Yum):</b> O dnf é uma versão mais recente e aprimorada do yum, utilizado pelo Fedora. Ele possui uma interface de linha de comando semelhante ao yum, mas com recursos adicionais. Alguns comandos importantes são:
+                </h6>
+                <section class="mx-3">
+                  <div>
+                    <p>
+                      <b class="text-primary">sudo dnf upgrade:</b> Atualiza todos os pacotes instalados.
+                    </p>
+                    <img class="w-50 p-3" src="../src/sudodnfupgrade.PNG">
+                  </div>
+
+                  <div>
+                    <p>
+                      <b class="text-primary">sudo dnf install nome_do_pacote:</b> Instala um pacote específico.
+                    </p>
+                    <img class="w-50 p-3" src="../src/sudodnfinstall.PNG">
+                  </div>
+
+                  <div>
+                    <p>
+                      <b class="text-primary">sudo dnf upgrade:</b> Atualiza os pacotes instalados para suas versões mais recentes.
+                    </p>
+                    <img class="w-50 p-3" src="../src/sudodnfupgrade.PNG">
+                  </div>
+
+                  <div>
+                    <p>
+                      <b class="text-primary">sudo dnf remove nome_do_pacote:</b> Remove um pacote específico.
+                    </p>
+                    <img class="w-50 p-3" src="../src/sudodnfremove.PNG">
+                  </div>
+                </section>
+                  
+
+              </div>
+              -->
+
+
+            </p>
+            <p>Segue a mesma lógica de comandos para os demais gerenciadores de pacotes como <b class="text-warning">yum</b> e <b class="text-warning">dnf</b>, basicamente o que muda na hora de digitar o comando é a primeira palavra depois de <b class="text-danger">sudo</b>, por exemplo:</p>
+                  <b><b class="text-danger">sudo</b> <b class="text-warning">yum</b> install apache2</b>
+        </section>
+
+        <section class="p-3">
+            <h4>
+              Instalação, atualização e remoção de software usando gerenciadores de pacotes
+            </h4>
+            
+              
+            <p>
+              Usando esses gerenciadores de pacotes, você pode instalar, atualizar e remover software de maneira simples. 
+            </p>
+            <div class="mx-5">
+              <p>
+                <b class="text-warning">sudo apt install apache2</b>
+              </p>
+              <img src="../src/sudoaptinstallapache2.png" class="w-50 p-3">
+              <p>
+                Para instalar o pacote "<b class="text-danger">apache2</b>" no Ubuntu ou Debian usando o <b class="text-danger">apt</b>, você executaria o comando acima:
+                
+              </p>
+            </div>
+            <div class="mx-5">
+              <p>
+                <b class="text-warning">sudo dnf upgrade</b>
+              </p>
+              <img src="../src/sudodnfupgrade.png" class="w-50 p-3">
+              <p>
+                Para atualizar todos os pacotes instalados no Fedora usando o dnf, você executaria o comando acima: 
+              </p>
+            </div>
+            <div class="mx-5">
+              <p>
+                <b class="text-warning">sudo yum remove firefox.x86_64</b>
+              </p>
+              <img src="../src/yumremovefirefox.png" class="w-50 p-3">
+              <p>
+                E se você desejar remover o pacote "firefox.x86_64" no CentOS usando o yum, você usaria o comando acima:
+              </p>
+            </div>
+            <p class="text-warning">Os gerenciadores de pacotes cuidam das dependências, garantindo que todas as bibliotecas necessárias sejam instaladas ou atualizadas automaticamente.</p>
+        </section>
+        
+    </div>
+  </main>
+
+  <footer class="bg-secondary text-light my-3 text-center">
+    &copy; 2023 Curso de Linux | Todos os direitos reservados a <b>Eduardo de Paula Ribeiro, André Luiz e Mayra</b>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../css/index.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Curso de Linux: Administração de servidores</title>
+  <style>
+
+  </style>
+</head>
+<body class="bg-secondary">
+
+  <nav class="navbar bg-secondary">
+    <div class="container-fluid">
+      <a class="navbar-brand text-light mx-auto p-2" href="../index.html">
+        <img src="../src/penguin-4871045_1280.webp" alt="Logo" width="50" height="44" class="d-inline-block text-center">
+        Curso de Linux
+      </a>
+    </div>
+  </nav>
+
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h6 class="text-light h4">Módulos</h6>
+      <ol class="list-group list-group-numbered">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold"><a href="../curso/introducao.html" target="_blank" class="text-decoration-none text-dark">1. Introdução ao Linux:</a></div>
+            Vantagens, benefícios, história, visão geral
+          </div>
+          <span class="badge bg-primary rounded-pill">3 tópicos</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold"><a href="../curso/linhadecomando.html" target="_blank" class="text-decoration-none text-dark">2. Linha de comando:</a></div>
+            Terminal, comandos básicos, scripts
+          </div>
+          <span class="badge bg-primary rounded-pill">3 tópicos</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold"><a href="../curso/gerenciamentopacotes.html" target="_blank" class="text-decoration-none text-dark">3. Gerenciamento de pacotes:</a></div>
+            Gerenciadores de pacotes, Instalação, atualização.
+          </div>
+          <span class="badge bg-primary rounded-pill">2 tópicos</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold"><a href="../curso/administracaosistema.html" target="_blank" class="text-decoration-none text-dark">4. Administração do sistema:</a></div>
+              Usuários, grupos, permissões e serviços.
+            </div>
+            <span class="badge bg-primary rounded-pill">3 tópicos</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold"><a href="../curso/administracaoservidor.html" target="_blank" class="text-decoration-none text-dark">5. Administração de servidores:</a></div>
+              Apache
+            </div>
+            <span class="badge bg-primary rounded-pill">1 tópicos</span>
+          </li>
+      </ol>
+      
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="mx-auto p-2 navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        Ver Curso
+        <span class="bi bi-chevron-down"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="bg-dark text-light">
+    <div class="mx-5">
+        <h2>Administração de servidores</h2>
+        <p>
+          Um aspecto importante da administração de servidores no Linux é a configuração de servidores web. Neste caso, abordaremos a configuração do servidor web Apache, um dos servidores web mais populares e amplamente utilizado.
+        </p>
+        <img class="" src="../src/apache2.png" alt="apache2 foto">
+        <br>
+    </div>
+
+
+    <div class="mx-5">
+        <section class="p-3">
+            <h4>
+              Configuração de servidores web (Apache)
+            </h4>
+            <p>
+              O Apache é um servidor web de código aberto que permite hospedar e servir páginas da web. Aqui estão alguns passos básicos para configurar o servidor web Apache no Linux:
+            </p>
+            <p>
+              <h6>Instalação do Apache:</h6>
+              
+              No Ubuntu e outras distribuições baseadas no Debian, você pode usar o comando <i class="text-warning">sudo apt install apache2 apache2-utils apache2-doc</i> para instalar o Apache.
+              No CentOS e outras distribuições baseadas no Red Hat, você pode usar o comando <i class="text-warning">sudo yum install httpd</i> para instalar o Apache, como já ensinamos no <a class="text-danger fw-bold" target="_blank" href="/curso/gerenciamentopacotes.html">Módulo 3: Gerenciamento de pacotes</a>.
+
+            </p>
+            <p>
+              <h6>Inicialização e habilitação do Apache:</h6>
+              
+              Após a instalação, você pode iniciar o Apache usando o comando <i class="text-warning">sudo systemctl start apache2</i> (ou sudo systemctl start httpd em distribuições baseadas no Red Hat).
+              Para verificar se realmente funcionou utilize o comando <i class="text-warning">systemctl list-units --type=service</i> e o serviço deverá aparecer, ensinamos sobre serviços e seus comandos no <a class="text-danger fw-bold" target="_blank" href="/curso/administracaosistema.html">Módulo 4: Administração do sistema</a>.
+            </p>
+            <img alt="iniciando e habilitando o apache" src="../src/sudosystemctlenableapache2.PNG" class="w-50 p-3">
+            <p>
+              Para habilitar o Apache a iniciar automaticamente na inicialização do sistema, use o comando <i class="text-warning">sudo systemctl enable apache2</i> (ou sudo systemctl enable httpd no Red Hat).
+            </p>
+            <p>
+              <h6>Configuração do diretório raiz do servidor:</h6>
+              
+              O diretório raiz do servidor web é onde os arquivos e páginas da web são armazenados. O diretório padrão no Apache é <i class="text-warning">/var/www/html</i>, que é onde o site é armazenado.
+              Você pode modificar esse diretório editando o arquivo de configuração principal do Apache. No Ubuntu, o arquivo é <i class="text-warning">/etc/apache2/apache2.conf</i>, e no CentOS é /etc/httpd/conf/httpd.conf.
+              Procure pela diretiva <i class="text-warning">DocumentRoot</i> e altere o caminho para o diretório desejado. Lembre-se de ajustar as permissões de arquivo e diretório adequadamente.
+
+            </p>
+            <p>
+              <h6>Configuração de hosts virtuais:</h6>
+              
+              Os hosts virtuais permitem que você hospede vários sites em um único servidor.
+              No Apache, os hosts virtuais são configurados por meio de arquivos de configuração separados.
+              No Ubuntu, você pode criar um arquivo de configuração para cada host virtual no diretório <i class="text-warning">/etc/apache2/sites-available/</i>.
+              No CentOS, você pode criar arquivos de configuração no diretório /etc/httpd/conf.d/.
+              Certifique-se de configurar corretamente o nome do servidor, o diretório raiz, as permissões e outros parâmetros necessários para cada host virtual.
+            </p>
+            <img alt="arquivo .conf para o site" src="../src/meusite_conf.png" class="w-50 p-3">
+            <p>
+              O seu arquivo <i class="text-warning">.conf</i> deverá ficar mais ou menos assim.
+            </p>
+            <p>
+              <h6>Reinicialização do Apache:</h6>
+              
+              Após fazer alterações na configuração do Apache, você deve reiniciá-lo para que as alterações entrem em vigor. Use o comando <i class="text-warning">sudo systemctl restart apache2</i> (ou sudo systemctl restart httpd no Red Hat) para reiniciar o Apache.
+              Essas são apenas etapas básicas para a configuração do servidor web Apache. À medida que você avança, pode explorar recursos avançados, como configuração de segurança, suporte a SSL, balanceamento de carga e muito mais.
+
+            </p>  
+        </section>
+
+    </div>
+  </main>
+
+  <footer class="bg-secondary text-light my-3 text-center">
+    &copy; 2023 Curso de Linux | Todos os direitos reservados a <b>Eduardo de Paula Ribeiro, André Luiz e Mayra</b>
+  </footer>
+
+</body>
+</html>
+Tema: 
+
+
+
+
+
+
